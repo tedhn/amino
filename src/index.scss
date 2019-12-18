@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css?family=Baloo|Caveat|Kaushan+Script|McLaren|Satisfy&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+body {
+  font-family: "Baloo", cursive;
+}
+
+.mainPage {
+  height: 100vh;
+  display: flex;
+  background: url("./svg/Main.svg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  flex-direction: column;
+
+  .text {
+    color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    font-size: 3em;
+
+    .content {
+      position: relative;
+      font-size: 0.6em;
+    }
+  }
+
+  .image {
+    position: absolute;
+    right: 10%;
+    top: 30%;
+  }
+}
+
+.aboutUsPage {
+  height: 100vh;
+  display: flex;
+  background: url("./svg/Main2.svg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  flex-direction: column;
+
+  .auTitle {
+    color: rgba(0, 0, 0, 0.5);
+    width: 40%;
+    font-size: 2.5em;
+    position: relative;
+    top: 25%;
+    left: 10%;
+    opacity: 0;
+  }
+
+  .auContent {
+    position: relative;
+    width: 50%;
+    font-size: 1.5em;
+    top: 30%;
+    color: rgba(0, 0, 0, 0.5);
+    left: 10%;
+    z-index: 2;
+    opacity: 0;
+  }
+
+  .auImage {
+    position: absolute;
+    right: 5%;
+    top: 115%;
+    opacity: 0;
+  }
+
+  .auButton {
+    position: relative;
+    top: 35%;
+    left: 10%;
+    opacity: 0;
+    width: 20%;
+
+    > button {
+      font-family: "Baloo", cursive;
+      color: rgba(0, 0, 0, 0.5);
+      border: 3px solid rgba(0, 0, 0, 0.5);
+      outline: none;
+      background-color: transparent;
+      padding: 3% 6%;
+      font-size: 1.1em;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+      }
+    }
+  }
+}
+
+.whyUsPage {
+  background: url("./svg/Main3.svg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  flex-direction: column;
+
+  .wuTitle {
+    color: rgba(0, 0, 0, 0.5);
+    width: 40%;
+    font-size: 2.5em;
+    position: relative;
+    top: 20%;
+    left: 50%;
+    opacity: 0;
+  }
+
+  .wuContent {
+    position: relative;
+    width: 45%;
+    font-size: 1.5em;
+    top: 25%;
+    color: rgba(0, 0, 0, 0.5);
+    left: 50%;
+    z-index: 2;
+    opacity: 0;
+  }
+
+  .wuImage {
+    position: absolute;
+    left: 5%;
+    top: 215%;
+    opacity: 0;
+  }
+
+  .wuButton {
+    position: relative;
+    top: 30%;
+    left: 50%;
+    opacity: 0;
+    width: 20%;
+
+    > button {
+      font-family: "Baloo", cursive;
+      color: rgba(0, 0, 0, 0.5);
+      border: 3px solid rgba(0, 0, 0, 0.5);
+      outline: none;
+      background-color: transparent;
+      padding: 3% 6%;
+      font-size: 1.1em;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+      }
+    }
+  }
+}
+
+.supportPage {
+  background: url("./svg/Main3.svg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+
+  .sTitle {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 3.5em;
+    width: 10%;
+    position: relative;
+    top: 10%;
+    left: 25%;
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+
+  .faqList {
+    list-style-type: none;
+    position: absolute;
+    left: 25%;
+    top: 330%;
+    transform: translateX(-50%);
+    z-index: 5;
+
+    .listItem {
+      width: 100%;
+      display: relative;
+      top: 1%;
+      padding: 2%;
+      cursor: pointer;
+
+      .question {
+        margin-bottom: 7%;
+        letter-spacing: 0.05em;
+        font-size: 1.2em;
+      }
+      .answer {
+        opacity: 0;
+        width: 700px;
+        position: absolute;
+      }
+    }
+  }
+
+  .sImage {
+    position: absolute;
+    right: 15%;
+    top: 315%;
+  }
+}
+
+.loginPage {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contactPage {
+  height: 100vh;
+  display: flex;
+}
+
+#companyName {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+
+.loadingImage {
+  width: 60%;
+  position: absolute;
+  top: 40%;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.preload {
+  justify-content: center;
+  align-content: center;
+  display: flex;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 12312;
+  background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+  transition: opacity 0.5s ease;
+
+  &.finished {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.navBar {
+  position: absolute;
+  top: 5%;
+  width: 97%;
+  list-style-type: none;
+  cursor: pointer;
+
+  .options {
+    float: right;
+    padding: 0 3%;
+    right: 5%;
+    font-size: 1.5em;
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
