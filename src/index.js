@@ -61,11 +61,6 @@ function Container() {
         <li className="companyName">
           <Company />
         </li>
-        <li className="options" onClick={() => console.log("asdf")}>
-          Login
-        </li>
-        <li className="options">Support</li>
-        <li className="options">App</li>
       </ul>
 
       <Main />

@@ -63,7 +63,7 @@ export default function WhyUs() {
         <button>Read more</button>
       </div>
 
-      <div className="wuImage">
+      <div className="wuImage" id='image'>
         <Image />
       </div>
     </div>

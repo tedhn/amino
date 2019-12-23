@@ -64,7 +64,7 @@ export default function AboutUs() {
         <button>Read More</button>
       </div>
 
-      <div className="auImage">
+      <div className="auImage" id='image'>
         <Team />
       </div>
     </div>

@@ -21,7 +21,7 @@ export default function Main() {
         <div className="content">Get started on your project today!</div>
       </div>
 
-      <div className="image">
+      <div className="image"id='image'>
         <Freelance />
       </div>
     </div>

@@ -266,7 +266,7 @@ export default function Support() {
         </li>
       </ul>
 
-      <div className="sImage">
+      <div className="sImage"id='image'>
         <Faq />
       </div>
     </div>
