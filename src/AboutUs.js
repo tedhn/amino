@@ -37,7 +37,7 @@ export default function AboutUs() {
             targets: ".auButton",
             opacity: 1
           },
-          "-= 350"
+          "-= 450"
         )
         .add(
           {
@@ -48,7 +48,7 @@ export default function AboutUs() {
           "-=900"
         );
     }
-  }, [animate, timeline]);
+  }, [animate]);
 
   return (
     <div className="aboutUsPage">
@@ -57,14 +57,13 @@ export default function AboutUs() {
         Our team of web developers helps your business stand out of the crowd in
         the online marketplace by providing brilliantly designed website.
         Creating pixel perfect and responsive web design for our client’s
-        business website,
+        business website.
+        <div className="auButton">
+          <button>Read More</button>
+        </div>
       </div>
 
-      <div className="auButton">
-        <button>Read More</button>
-      </div>
-
-      <div className="auImage" id='image'>
+      <div className="auImage" id="image">
         <Team />
       </div>
     </div>

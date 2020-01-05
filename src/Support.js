@@ -8,7 +8,9 @@ export default function Support() {
   const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);
   const [show3, setShow3] = useState(false);
-  const [show4, setShow4] = useState(false);
+  const [y, setY] = useState(0);
+  const [y2, setY2] = useState(0);
+  const [animate, setAnimate] = useState(false);
 
   let timeline = anime.timeline({
     easing: "easeOutExpo",
@@ -18,16 +20,22 @@ export default function Support() {
   const toggle1 = () => {
     if (show1) {
       setShow1(false);
+      setY(y - 170);
+      setY2(y2 - 170);
     } else {
       setShow1(true);
+      setY(y + 170);
+      setY2(y2 + 170);
     }
   };
 
   const toggle2 = () => {
     if (show2) {
       setShow2(false);
+      setY2(y2 - 60);
     } else {
       setShow2(true);
+      setY2(y2 + 60);
     }
   };
 
@@ -38,179 +46,122 @@ export default function Support() {
       setShow3(true);
     }
   };
-  const toggle4 = () => {
-    if (show4) {
-      setShow4(false);
-    } else {
-      setShow4(true);
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 1850) {
+      setAnimate(true);
     }
-  };
+  });
+
+  useEffect(() => {
+    if (animate) {
+      timeline.add({
+        targets: ".sTitle",
+        opacity: 1
+      });
+      timeline.add(
+        {
+          targets: ".faqList",
+          opacity: 1
+        },
+        "-=450"
+      );
+      timeline.add(
+        {
+          targets: ".sImage",
+          opacity: 0.4
+        },
+        "-=900"
+      );
+    }
+  }, [animate]);
 
   useEffect(() => {
     timeline
       .add({
         targets: "#q1",
-        color: show1 ? "rgba(0, 0, 0, 0.7)" : "rgba(0, 0, 0, 0.5)"
+        color: "rgba(0, 0, 0, 0.7)"
       })
       .add(
         {
           targets: "#a1",
-          opacity: show1 ? 1 : 0,
-          color: "rgba(0, 0, 0, 0.7)"
+          opacity: show1 ? 1 : 0
         },
         "-= 600"
       )
       .add(
         {
           targets: "#q2",
-          translateY: show1 ? 100 : 0,
-          opacity: show1 ? 0.1 : 1,
-          color: "rgba(0, 0, 0, 0.5)"
+          translateY: y
         },
-        "-=600"
+        "-= 600"
+      )
+      .add(
+        {
+          targets: "#a2",
+          translateY: y
+        },
+        "-= 600"
       )
       .add(
         {
           targets: "#q3",
-          translateY: show1 ? 100 : 0,
-          opacity: show1 ? 0.1 : 1,
-          color: "rgba(0, 0, 0, 0.5)"
+          translateY: y2
         },
-        "-=600"
+        "-= 600"
       )
       .add(
         {
-          targets: "#q4",
-          translateY: show1 ? 100 : 0,
-          opacity: show1 ? 0.1 : 1,
-          color: "rgba(0, 0, 0, 0.5)"
+          targets: "#a3",
+          translateY: y2
         },
-        "-=600"
+        "-= 600"
       );
   }, [show1]);
 
   useEffect(() => {
     timeline
-      .add(
-        {
-          targets: "#q1",
-          opacity: show2 ? 0.1 : 1,
-          color: "rgba(0, 0, 0, 0.5)"
-        },
-        "-=600"
-      )
       .add({
         targets: "#q2",
-        color: show2 ? "rgba(0, 0, 0, 0.7)" : "rgba(0, 0, 0, 0.5)"
+        color: "rgba(0, 0, 0, 0.7)"
       })
       .add(
         {
           targets: "#a2",
-          opacity: show2 ? 1 : 0,
-          color: "rgba(0, 0, 0, 0.7)"
+          opacity: show2 ? 1 : 0
         },
         "-= 600"
       )
       .add(
         {
           targets: "#q3",
-          translateY: show2 ? 50 : 0,
-          opacity: show2 ? 0.1 : 1,
-          color: "rgba(0, 0, 0, 0.5)"
+          translateY: y2
         },
-        "-=600"
+        "-= 600"
       )
       .add(
         {
-          targets: "#q4",
-          translateY: show2 ? 50 : 0,
-          opacity: show2 ? 0.1 : 1,
-          color: "rgba(0, 0, 0, 0.5)"
+          targets: "#a3",
+          translateY: y2
         },
-        "-=600"
+        "-= 600"
       );
   }, [show2]);
 
   useEffect(() => {
     timeline
-      .add(
-        {
-          targets: "#q1",
-          opacity: show3 ? 0.1 : 1,
-          color: "rgba(0, 0, 0, 0.5)"
-        },
-        "-=600"
-      )
       .add({
-        targets: "#q2",
-        opacity: show3 ? 0.1 : 1,
-        color: "rgba(0, 0, 0, 0.5)"
+        targets: "#q3",
+        color: "rgba(0, 0, 0, 0.7)"
       })
       .add(
         {
-          targets: "#q3",
-          color: show3 ? "rgba(0, 0, 0, 0.7)" : "rgba(0, 0, 0, 0.5)"
-        },
-        "-=600"
-      )
-      .add(
-        {
-          targets: "#q4",
-          translateY: show3 ? 150 : 0,
-          opacity: show3 ? 0.1 : 1,
-          color: "rgba(0, 0, 0, 0.5)"
-        },
-        "-=600"
-      )
-      .add(
-        {
           targets: "#a3",
-          opacity: show3 ? 1 : 0,
-          color: "rgba(0, 0, 0, 0.7)"
+          opacity: show3 ? 1 : 0
         },
         "-= 600"
       );
   }, [show3]);
-
-  useEffect(() => {
-    timeline
-      .add(
-        {
-          targets: "#q1",
-          opacity: show4 ? 0.1 : 1,
-          color: "rgba(0, 0, 0, 0.5)"
-        },
-        "-=600"
-      )
-      .add({
-        targets: "#q2",
-        opacity: show4 ? 0.1 : 1,
-        color: "rgba(0, 0, 0, 0.5)"
-      })
-      .add(
-        {
-          targets: "#q3",
-          opacity: show4 ? 0.1 : 1,
-          color: "rgba(0, 0, 0, 0.5)"
-        },
-        "-=600"
-      )
-      .add(
-        {
-          targets: "#q4",
-          color: show4 ? "rgba(0, 0, 0, 0.7)" : "rgba(0, 0, 0, 0.5)"
-        },
-        "-=600"
-      )
-      .add(
-        {
-          targets: "#a4",
-          opacity: show4 ? 1 : 0,
-          color: "rgba(0, 0, 0, 0.7)"
-        },
-        "-= 600"
-      );
-  }, [show4]);
 
   return (
     <div className="supportPage">
@@ -250,23 +201,9 @@ export default function Support() {
             other tasks.
           </div>
         </li>
-        <li className="listItem" value={1}>
-          <div className="question" id="q4" onClick={toggle4}>
-            How much will my project cost?
-          </div>
-          <div className="answer" id="a4">
-            We can’t answer this question until we understand your idea,
-            business, users etc. While it’s really hard to know the specific
-            costs of the project without going through a discovery phase like
-            our Research, Design, and Planning phase, we can usually help you
-            set a responsible budget during before you ever hire us. No matter
-            how large or small your budget, it’s always our goals for the value
-            our clients receive to significantly exceed the fees we charge.
-          </div>
-        </li>
       </ul>
 
-      <div className="sImage"id='image'>
+      <div className="sImage" id="image">
         <Faq />
       </div>
     </div>

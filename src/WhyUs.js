@@ -37,7 +37,7 @@ export default function WhyUs() {
             targets: ".wuButton",
             opacity: 1
           },
-          "-= 350"
+          "-= 450"
         )
         .add(
           {
@@ -48,23 +48,24 @@ export default function WhyUs() {
           "-=900"
         );
     }
-  }, [animate, timeline]);
+  }, [animate]);
 
   return (
     <div className="whyUsPage">
       <div className="wuTitle">Why Amino?</div>
+
+      <div className="wuImage" id="image">
+        <Image />
+      </div>
+
       <div className="wuContent">
         We a team of young and ambitious people who are bringing the best
         software solution to the digital market. We specializes on software
         solutions with micro service approach that gives the best performance to
         your software.
-      </div>
-      <div className="wuButton">
-        <button>Read more</button>
-      </div>
-
-      <div className="wuImage" id='image'>
-        <Image />
+        <div className="wuButton">
+          <button>Read more</button>
+        </div>
       </div>
     </div>
   );
