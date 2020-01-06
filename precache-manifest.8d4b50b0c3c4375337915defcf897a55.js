@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "39050c8d99d514f4d8be763d20b69d5e",
+    "revision": "538c4f999ab85dc4a7ce1f37d72b809d",
     "url": "/amino/index.html"
   },
   {
-    "revision": "c031e014928de369aed9",
-    "url": "/amino/static/css/main.94e12b7b.chunk.css"
+    "revision": "6f607004fd6e4d3df3d3",
+    "url": "/amino/static/css/main.58645762.chunk.css"
   },
   {
     "revision": "d95d5a1dcfa8dcc9d01d",
     "url": "/amino/static/js/2.0c75a124.chunk.js"
   },
   {
-    "revision": "c031e014928de369aed9",
-    "url": "/amino/static/js/main.3c3c817d.chunk.js"
+    "revision": "6f607004fd6e4d3df3d3",
+    "url": "/amino/static/js/main.591b0a92.chunk.js"
   },
   {
     "revision": "032b1904d7c4d58a83e8",

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/amino/precache-manifest.888be9fd47196b015a2fc4d180e48d09.js"
+  "/amino/precache-manifest.8d4b50b0c3c4375337915defcf897a55.js"
 );
 
 self.addEventListener('message', (event) => {
